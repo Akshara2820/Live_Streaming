@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Message from "./Message";
-import Picker from "emoji-picker-react";
+import InputEmoji from "react-input-emoji";
 import {
   selectHMSMessages,
   useHMSActions,
@@ -16,17 +16,14 @@ function ChatNdParticipants() {
   const hmsActions = useHMSActions();
   const peers = useHMSStore(selectPeers);
 
-  const [chosenEmoji, setChosenEmoji] = useState(null);
+  const [text, setText] = useState("");
 
-  const onEmojiClick = (e) => {
-    e.preventDefault();
-    hmsActions.sendBroadcastEmoji(chosenEmoji);
-    setChosenEmoji();
-    console.log('jkooo')
-  };
+  function handleOnEnter(text) {
+    console.log("enter", text);
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     hmsActions.sendBroadcastMessage(message);
     setMessage("");
   };
@@ -57,17 +54,17 @@ function ChatNdParticipants() {
                 <Message key={msg.id} message={msg} />
               ))}
             </div>
-            <div className="addEmoji ">
-              <div className="emoji">
-                <MdOutlineEmojiEmotions />
-              </div>
-              <form name="send-messge" onSubmit={handleSubmit}>
-                <input
-                  onChange={(e) => setMessage(e.target.value)}
-                  value={message}
-                  placeholder="Write your message"
-                />
-              </form>
+
+<div className="inputEmoji">
+
+
+            <InputEmoji
+              value={message}
+              onChange={setMessage}
+              cleanOnEnter
+              onEnter={handleSubmit}
+              placeholder="Type a message"
+            />
             </div>
           </>
         )}

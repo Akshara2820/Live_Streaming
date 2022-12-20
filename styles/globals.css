@@ -2,17 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    background-color: #263238;
+  background-color: #263238;
   color: white;
 }
 
@@ -22,7 +21,6 @@ h3,
 h4,
 h5 {
   font-weight: normal;
-
 }
 
 /* Join Room */
@@ -41,7 +39,9 @@ h5 {
   color: white;
 }
 
-.join input, select, button {
+.join input,
+select,
+button {
   height: 45px;
   border: none;
   outline: none;
@@ -49,17 +49,18 @@ h5 {
   border-radius: 4px;
   border: 1px solid rgb(182, 184, 190);
   font-size: 16px;
-
 }
-.join-btn{
+.join-btn {
   color: white;
 }
 
-.join input::placeholder, select::placeholder{
+.join input::placeholder,
+select::placeholder {
   color: hsl(223, 3%, 56%);
 }
 
-.join input, select{
+.join input,
+select {
   padding: 0 10px;
 }
 
@@ -74,14 +75,13 @@ h5 {
 /* ChatNdParticipants */
 .rightBox {
   border-radius: 10px;
-  margin-top: 5%;
+
   width: 30%;
   background-color: white;
   padding: 30px 25px;
 }
 
-
-.rightBox__optionView{
+.rightBox__optionView {
   height: 100%;
 }
 
@@ -89,14 +89,13 @@ h5 {
   width: 100%;
   text-align: left;
   height: fit-content;
-
 }
 
 .rightBox__head .selected {
   color: black;
 }
 
-.rightBox__head span{
+.rightBox__head span {
   font-weight: bold;
   color: #a6a8ab;
   cursor: pointer;
@@ -106,7 +105,7 @@ h5 {
   margin-right: 10px;
 }
 
-.rightBox__chats{
+.rightBox__chats {
   height: calc(100% - 60px);
   overflow: scroll;
   padding: 10px 0;
@@ -129,18 +128,16 @@ h5 {
   color: #000;
 }
 
-.rightBox__optionView form input:focus{
+.rightBox__optionView form input:focus {
   outline: none;
 }
 
-.rightBox__participants{
+.rightBox__participants {
   padding: 10px 0;
   height: 100%;
   overflow: scroll;
   ms-overflow-style: none;
   scrollbar-width: none; /* Firefox */
- 
-
 }
 
 .rightBox__participants::-webkit-scrollbar {
@@ -154,20 +151,19 @@ h5 {
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
-  color:white;
+  color: white;
 }
 
 .rightBox__participant p {
   font-size: 14px;
 }
 
-
 /* Controls */
 .controls {
   display: flex;
   /* align-items: center; */
   justify-content: center;
-  padding: 20px ;
+  padding: 20px;
   height: 80px;
   margin-top: 10px;
   /* background-color: white; */
@@ -175,41 +171,40 @@ h5 {
   gap: 10px;
 }
 
-.controls .MuiButton-root .MuiSvgIcon-root{
+.controls .MuiButton-root .MuiSvgIcon-root {
   margin-right: 5px;
 }
 
-.controls .MuiButton-root img{
+.controls .MuiButton-root img {
   height: 20px;
   width: 20px;
   margin-left: 5px;
 }
 
-.controls .MuiButton-root{
+.controls .MuiButton-root {
   text-transform: unset;
   padding: 10px;
   border-radius: 10px;
 }
 
-.controls .leave{
-  background-color: rgb(241, 110, 110); 
+.controls .leave {
+  background-color: rgb(241, 110, 110);
   padding: 20px;
 }
-.controls .stopbtn{
-  background-color: rgb(241, 110, 110); 
+.controls .stopbtn {
+  background-color: rgb(241, 110, 110);
   padding: 20px;
 }
-.controls .video-icon{
-  background-color: rgb(255, 255, 255); 
+.controls .video-icon {
+  background-color: rgb(255, 255, 255);
 }
-.controls .video-icon:hover{
-  background-color: rgb(235, 234, 234); 
-}
-
-.controls .leave:hover{
-  background-color: rgb(242, 87, 87); 
+.controls .video-icon:hover {
+  background-color: rgb(235, 234, 234);
 }
 
+.controls .leave:hover {
+  background-color: rgb(242, 87, 87);
+}
 
 /* HlsView and VideoTile */
 video {
@@ -224,9 +219,8 @@ video {
   height: unset;
 }
 
-
 /* Message */
-.message{
+.message {
   width: fit-content;
   text-align: left;
   max-width: 90%;
@@ -244,20 +238,19 @@ video {
   font-size: 14px;
   overflow: hidden;
   margin-bottom: 5px;
-  color:white;
+  color: white;
 }
 
-.myMessage{
+.myMessage {
   margin-left: auto;
   text-align: right;
 }
 
-.myMessage p{
+.myMessage p {
   background-color: #1d84ea;
   color: white;
   padding: 10px;
 }
-
 
 /* Room */
 .room {
@@ -268,8 +261,7 @@ video {
   gap: 10px;
 }
 
-
-.room__streamSpace{
+.room__streamSpace {
   width: 100%;
   height: 100%;
 }
@@ -285,7 +277,6 @@ video {
   overflow: hidden;
 }
 
-
 /* Stream */
 .stream {
   border-radius: 10px;
@@ -297,23 +288,24 @@ video {
   flex-wrap: wrap;
   overflow: hidden;
 }
-.addEmoji{
-  display: flex;
-  color: black;
-  align-items: center;
-}
-.emoji{
-  font-size: 24px;
-}
-@media (max-width:426px) {
-  .room{
+
+@media (max-width: 426px) {
+  .room {
     flex-wrap: wrap;
   }
-  .rightBox{
+  .rightBox {
     width: 100%;
-    /* position: absolute; */
-    /* background-color: transparent; */
     height: 300px;
     scroll-behavior: smooth;
+    padding-bottom: 50px;
+  }
+  .react-emoji-picker {
+    left: 22px !important;
+  }
+  .emoji-mart.emoji-mart-light {
+    width: 310px !important;
+}
+  .react-emoji-picker--wrapper {
+    right: -25px !important;
   }
 }
