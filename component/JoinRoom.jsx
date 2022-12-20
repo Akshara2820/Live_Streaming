@@ -5,7 +5,6 @@ function JoinRoom() {
   const ENDPOINT = process.env.REACT_APP_TOKEN_ENDPOINT;
   const ROOM_ID = process.env.REACT_APP_ROOM_ID;
 
-  const [selectedRole, setSelectedRole] = useState("broadcaster");
   const hmsActions = useHMSActions();
   const [inputValues, setInputValues] = useState({
     name: "",
@@ -53,6 +52,8 @@ function JoinRoom() {
 
       <select
         type="text"
+        id='role'
+        name="role"
         required
         value={inputValues.role}
         onChange={handleInputChange}

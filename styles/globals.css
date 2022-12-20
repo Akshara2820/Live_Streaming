@@ -89,6 +89,7 @@ h5 {
   width: 100%;
   text-align: left;
   height: fit-content;
+
 }
 
 .rightBox__head .selected {
@@ -296,6 +297,14 @@ video {
   flex-wrap: wrap;
   overflow: hidden;
 }
+.addEmoji{
+  display: flex;
+  color: black;
+  align-items: center;
+}
+.emoji{
+  font-size: 24px;
+}
 @media (max-width:426px) {
   .room{
     flex-wrap: wrap;
@@ -303,5 +312,8 @@ video {
   .rightBox{
     width: 100%;
     /* position: absolute; */
+    /* background-color: transparent; */
+    height: 300px;
+    scroll-behavior: smooth;
   }
 }
