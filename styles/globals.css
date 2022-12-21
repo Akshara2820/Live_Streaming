@@ -78,7 +78,7 @@ select {
 
   width: 30%;
   background-color: white;
-  padding: 30px 25px;
+  padding: 0px 0px 58px 0px;
 }
 
 .rightBox__optionView {
@@ -88,15 +88,25 @@ select {
 .rightBox__head {
   width: 100%;
   text-align: left;
+  display: flex;
+  justify-content: space-around;
   height: fit-content;
+  background: black;
+  padding: 10px;
+  border-radius: 8px;
+  border: 3px solid white;
 }
 
 .rightBox__head .selected {
-  color: black;
+  color: white;
 }
 
 .rightBox__head span {
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
   color: #a6a8ab;
   cursor: pointer;
 }
@@ -108,8 +118,8 @@ select {
 .rightBox__chats {
   height: calc(100% - 60px);
   overflow: scroll;
-  padding: 10px 0;
-  ms-overflow-style: none;
+  padding: 10px;
+  
   scrollbar-width: none; /* Firefox */
 }
 
@@ -133,7 +143,7 @@ select {
 }
 
 .rightBox__participants {
-  padding: 10px 0;
+  padding: 10px;
   height: 100%;
   overflow: scroll;
   ms-overflow-style: none;
@@ -145,17 +155,21 @@ select {
 }
 
 .rightBox__participant {
-  text-align: left;
-  text-align: left;
-  background-color: #1d84ea;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  background-color: #000000;
+  padding:5px 12px;
+  /* border-radius: 5px; */
+  font-size: 18px;
+  overflow: hidden;
+  margin-bottom: 5px;
   color: white;
+  border-radius: 5px;
+  animation: floatup .5s forwards;
+  line-height: 1.5em;
 }
 
-.rightBox__participant p {
-  font-size: 14px;
+.rightBox__participant_role{
+    font-size: 12px;
+    color: rgb(191, 196, 199);
 }
 
 /* Controls */
@@ -232,13 +246,31 @@ video {
 }
 
 .message p {
-  background-color: hsl(180, 1%, 47%);
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-size: 14px;
+  /* background-color: hsl(180, 11%, 87%); */
+  background-color: #000000;
+  padding:5px 12px;
+  /* border-radius: 5px; */
+  font-size: 18px;
   overflow: hidden;
   margin-bottom: 5px;
   color: white;
+  border-radius: 5px;
+  border-top-left-radius: 1.4rem;
+  border-bottom-left-radius: 2px;
+  animation: floatup .5s forwards;
+  line-height: 1.5em;
+
+}
+
+@keyframes floatup {
+  from {
+      transform: translateY(14px);
+      opacity: .0;
+  }
+  to {
+      transform: translateY(0px);
+      opacity: 1;
+  }
 }
 
 .myMessage {
@@ -247,9 +279,14 @@ video {
 }
 
 .myMessage p {
-  background-color: #1d84ea;
+  background-color: rgb(92 92 92);
   color: white;
-  padding: 10px;
+  padding: 5px 12px;
+  font-size: 18px;
+  border-radius: 5px;
+  border-top-right-radius: 1.4rem;
+  border-bottom-right-radius: 2px;
+  animation: floatup .5s forwards;
 }
 
 /* Room */
@@ -258,6 +295,7 @@ video {
   width: 100vw;
   height: 95vh;
   border-radius: 10px;
+  margin-top: 1%;
   gap: 10px;
 }
 
@@ -287,6 +325,15 @@ video {
   gap: 10px;
   flex-wrap: wrap;
   overflow: hidden;
+}
+.react-emoji{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background: black;
+  border-radius: 8px 8px 0px 0px;
+  padding: 8px;
 }
 
 @media (max-width: 426px) {

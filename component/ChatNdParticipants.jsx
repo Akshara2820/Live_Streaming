@@ -7,7 +7,8 @@ import {
   useHMSStore,
 } from "@100mslive/react-sdk";
 import { selectPeers } from "@100mslive/react-sdk";
-import { MdOutlineEmojiEmotions } from "react-icons/md";
+import { IoMdChatboxes } from "react-icons/io";
+import {FaUsers} from 'react-icons/fa'
 
 function ChatNdParticipants() {
   const [selectedOption, setSelectedOption] = useState("chat");
@@ -33,15 +34,14 @@ function ChatNdParticipants() {
       <div className="rightBox__head">
         <span
           onClick={() => setSelectedOption("chat")}
-          className={selectedOption === "chat" ? "selected" : ""}
-        >
-          Chat
+          className={selectedOption === "chat" ? "selected" : ""}>
+          Chat <IoMdChatboxes/>
         </span>
         <span
           className={selectedOption === "participants" ? "selected" : ""}
           onClick={() => setSelectedOption("participants")}
         >
-          Participants
+          Participants <FaUsers/>
         </span>
       </div>
 
@@ -55,16 +55,14 @@ function ChatNdParticipants() {
               ))}
             </div>
 
-<div className="inputEmoji">
-
-
-            <InputEmoji
-              value={message}
-              onChange={setMessage}
-              cleanOnEnter
-              onEnter={handleSubmit}
-              placeholder="Type a message"
-            />
+            <div className="inputEmoji">
+              <InputEmoji
+                value={message}
+                onChange={setMessage}
+                cleanOnEnter
+                onEnter={handleSubmit}
+                placeholder="Type a message"
+              />
             </div>
           </>
         )}
@@ -72,10 +70,10 @@ function ChatNdParticipants() {
           <div className="rightBox__participants">
             {/* Participants */}
             {peers.map((peer) => (
-              <div className="rightBox__participant">
-                {peer.name}
-                <p>{peer.roleName}</p>
-              </div>
+              <>
+                <span className="rightBox__participant_role">{peer.roleName}</span>
+                <div className="rightBox__participant">{peer.name}</div>
+              </>
             ))}
           </div>
         )}
